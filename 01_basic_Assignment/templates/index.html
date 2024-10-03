@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smartphone Images</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body class="bg-gray-100 flex flex-col items-center justify-between h-screen">
+
+    <!-- Header -->
+    <header id="header" class="w-full bg-white shadow-md transform -translate-y-full opacity-0 transition-transform transition-opacity duration-500 ease-in-out">
+        <div class="max-w-7xl mx-auto flex justify-between items-center p-4">
+            <h1 class="text-3xl text-blue-600 font-bold">Smartphone Gallery</h1>
+            <nav>
+                <ul class="flex space-x-6">
+                    <li><a href="#" class="text-gray-600 hover:text-blue-500">Home</a></li>
+                    <li><a href="#" class="text-gray-600 hover:text-blue-500">About</a></li>
+                    <li><a href="#" class="text-gray-600 hover:text-blue-500">Gallery</a></li>
+                    <li><a href="#" class="text-gray-600 hover:text-blue-500">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Image and Text Container -->
+    <main class="flex-grow flex items-center flex-col justify-center mt-10">
+        <div id="animatedContent" class="image-container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            {% for image in images %}
+                <div class="image-box text-center opacity-0 transition-opacity duration-300">
+                    <img src="{{ image.url }}" alt="Image {{ loop.index }}" class="w-full h-96 object-cover rounded-t-lg shadow-md">
+                    <p class="mt-2 text-lg font-medium">{{ image.text }}</p>
+                </div>
+            {% endfor %}
+        </div>
+
+        <!-- New Div for Additional Text -->
+        <div id="additionalText" class="mt-10 mb-20">
+            <h2 class="text-xl text-center font-semibold"></h2>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="w-full bg-white shadow-md">
+        <div class="max-w-7xl mx-auto py-4">
+            <p class="text-center text-gray-600 text-sm">&copy; 2024 Smartphone Gallery. All Rights Reserved.</p>
+            <p class="text-center text-gray-400 text-xs">Follow us on social media for updates!</p>
+        </div>
+    </footer>
+
+    <!-- External JavaScript -->
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+
+</body>
+</html>
