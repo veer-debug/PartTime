@@ -21,11 +21,11 @@ This is a Flask web application that displays a gallery of smartphone images. Th
 
 Clone this repository to your local machine:
 
-```bash
+- ```bash
     git clone <repository-url>
     cd smartphone-gallery
 
-```bash
+- ```bash
     # On Windows
     python -m venv venv
     venv\Scripts\activate
@@ -34,8 +34,8 @@ Clone this repository to your local machine:
     python3 -m venv venv
     source venv/bin/activate
 
-```bash
+- ```bash
     pip install -r requirements.txt
-```bash
+- ```bash
    #Run app
    python app.py
