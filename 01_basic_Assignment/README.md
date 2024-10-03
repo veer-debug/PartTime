@@ -22,7 +22,7 @@ This is a Flask web application that displays a gallery of smartphone images. Th
 Clone this repository to your local machine:
 
 - ```bash
-    git clone <repository-url>
+    git clone https://github.com/veer-debug/PartTime/tree/main/01_basic_Assignment
     cd smartphone-gallery
 
 - ```bash
